@@ -1,7 +1,9 @@
 # Kotlin-Algorithms
-** small assginment in Kotlin (Algorithms). **
-** This examples is not best practises. you can always find better one. **
-** Thats just a small examples written in a breath **
+> small assginment in Kotlin (Algorithms). 
+
+> This examples is not best practises. you can always find better one.
+
+> Thats just small examples written in a breath 
 
 * 1.დაწერეთ ფუნქცია, რომელსაც გადაეცემა ტექსტი  და აბრუნებს პალინდრომია თუ არა. (პალინდრომი არის ტექსტი რომელიც ერთნაირად იკითხება ორივე მხრიდან). 
 Boolean isPalindrome(String text);
