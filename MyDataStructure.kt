@@ -1,5 +1,9 @@
 package com.example.assignment_2.algorithms
 
+class Node(var data: Int) {
+    var next: Node? = null
+}
+
 class MyDataStructure {
     var head: Node? = null
 
@@ -14,28 +18,6 @@ class MyDataStructure {
                 n = n.next
             }
             n.next = newNode
-        }
-    }
-
-    //function to add an element at the start of the list
-    fun insertAtStart(data: Int) {
-        val newNode = Node(data)
-        newNode.next = head
-        head = newNode
-    }
-
-    //function to add an element at a given index
-    fun insertAt(index: Int , data: Int) {
-        if (index == 0) {
-            insertAtStart(data) //We already have a function to do this.
-        } else {
-            val newNode = Node(data)
-            var currentNode = head
-            for (i in 0 until index - 1) {
-                currentNode = currentNode!!.next
-            }
-            newNode.next = currentNode!!.next
-            currentNode.next = newNode
         }
     }
 

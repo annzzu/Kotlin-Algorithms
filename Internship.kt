@@ -59,15 +59,17 @@ class Internship {
 
     fun countVariants(stairCount: Int): Int = fibonacciNumber(stairCount + 1)
 
-    fun dataStructure(value: Int): Boolean {
-        for (i in internshipArray.indices) {
-            if (value == internshipArray[i]) {
-                internshipArray.remove(i)
-                return true
-            }
-        }
-        return false
-
+    fun dataStructure(value: Int) {
+        val list = MyDataStructure()
+        list.insert(12); //12
+        list.insert(43);
+        list.insert(44)
+        list.insert(10)
+        list.insert(13)
+        list.insert(16) // 44 10 13 16
+        list.deleteAt(value) // 44 10 16
+        println("6 - ")
+        list.show()
     }
 
 }
@@ -93,12 +95,6 @@ fun main() {
     // 5
     println("5 - ${internship1.countVariants(4)}")
     // 6
-//    println("6 - ${internship1.dataStructure(4)}")
+    internship1.dataStructure(2)
 
-    val list = MyDataStructure()
-    list.insert(12) //12
-    list.insertAtStart(191) //191 12 43
-    list.insertAt(2 , 2222) //191 12 2222 43
-    list.deleteAt(2) //191 12 43
-    list.show()
 }
