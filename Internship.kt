@@ -1,10 +1,20 @@
 package com.example.assignment_2.algorithms
 
+// extension for string - the simplest way to find if string is palindrome
+//fun String.isPalindrome(): Boolean = this == this.reversed()
 
 class Internship {
     private val internshipArray = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
 
-    fun isPalindrome(text: String): Boolean = text == text.reversed()
+    fun isPalindrome(text: String): Boolean {
+        if (text.isEmpty() || text.length == 1) return true
+        if (text[0] == text[text.length - 1])
+            return isPalindrome(text.substring(1 , text.length - 1))
+        return false
+
+    }
+    //    also we can use this method but that's not algorithmic approach
+    //    fun isPalindrome(text: String): Boolean = text.isPalindrome()
 
     fun minSplit(amount: Int): Int {
         var amountA = amount
