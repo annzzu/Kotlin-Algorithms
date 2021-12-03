@@ -19,24 +19,13 @@ class Internship {
         return ans.size
     }
 
-
     fun notContains(array: MutableList<Int>): Int {
-        if (array.isEmpty()) return 1
-        var i = 0
-        while (i < array.size) {
-            if (array[i] >= 1 && array[i] <= array.size && array[i] != array[array[i] - 1]) {
-                val temp = array[i] - 1
-                val temp2 = array[i]
-                array[i] = array[temp]
-                array[temp] = temp2
-            } else i += 1
-        }
-        array.forEachIndexed { index , value ->
-            if (value != index + 1)
-                return index + 1
-        }
-        return i + 1
-
+        if (array.isEmpty() || !array.contains(1)) return 1
+        else
+            array.distinct().sorted().filter { i -> i > 0 }.forEach { value ->
+                if (!array.contains(value + 1)) return value + 1
+            }
+        return 0
     }
 
     fun isProperly(sequence: String): Boolean {
@@ -71,7 +60,7 @@ class Internship {
 }
 
 fun main() {
-    val array1 = mutableListOf(1 , 2 , 4 , 5 , 6)
+    val array1 = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
 
     val internship1 = Internship()
     // 1
@@ -79,7 +68,7 @@ fun main() {
     // 2
     //    println("2 - ${internship1.minSplit(21)}")
     // 3
-    //    println("3 - ${internship1.notContains(array1)}")
+    //    println("\n 3 - ${internship1.notContains(array1)}")
     // 4
     //    println(
     //        "4 - ())() - ${internship1.isProperly("())()")} " +
