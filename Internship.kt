@@ -2,6 +2,7 @@ package com.example.assignment_2.algorithms
 
 
 class Internship {
+    private val internshipArray = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
 
     fun isPalindrome(text: String): Boolean = text == text.reversed()
 
@@ -47,12 +48,10 @@ class Internship {
 
     fun countVariants(stairCount: Int): Int = fibonacciNumber(stairCount + 1)
 
-    private val array = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
-
     fun dataStructure(value: Int): Boolean {
-        for (i in array.indices) {
-            if (value == array[i]) {
-                array.remove(i)
+        for (i in internshipArray.indices) {
+            if (value == internshipArray[i]) {
+                internshipArray.remove(i)
                 return true
             }
         }
@@ -63,7 +62,7 @@ class Internship {
 }
 
 fun main() {
-    val array1 = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
+    val array = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
 
     val internship1 = Internship()
     // 1
@@ -74,7 +73,7 @@ fun main() {
     // 2
     println("2 - ${internship1.minSplit(21)}")
     // 3
-    println("\n 3 - ${internship1.notContains(array1)}")
+    println("\n 3 - ${internship1.notContains(array)}")
     // 4
     println(
         "4 - ())() - ${internship1.isProperly("())()")} " +
