@@ -13,6 +13,7 @@ class Internship {
         return false
 
     }
+
     //    also we can use this method but that's not algorithmic approach
     //    fun isPalindrome(text: String): Boolean = text.isPalindrome()
 
@@ -92,5 +93,12 @@ fun main() {
     // 5
     println("5 - ${internship1.countVariants(4)}")
     // 6
-    println("6 - ${internship1.dataStructure(4)}")
+//    println("6 - ${internship1.dataStructure(4)}")
+
+    val list = MyDataStructure()
+    list.insert(12) //12
+    list.insertAtStart(191) //191 12 43
+    list.insertAt(2 , 2222) //191 12 2222 43
+    list.deleteAt(2) //191 12 43
+    list.show()
 }
