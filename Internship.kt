@@ -45,14 +45,19 @@ class Internship {
         else -> fibonacciNumber(n - 1) + fibonacciNumber(n - 2)
     }
 
-    fun countVariants(stearsCount: Int): Int = fibonacciNumber(stearsCount + 1)
+    fun countVariants(stairCount: Int): Int = fibonacciNumber(stairCount + 1)
 
-    fun dataStructure(value: Int) {
-//        if (!contains(value)) {
-//            throw NoSuchElementException()
-//        }
-//        val index: Int = valueIndexes.get(value)
-//        return deleteValue(index)
+    private val array = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
+
+    fun dataStructure(value: Int): Boolean {
+        for (i in array.indices) {
+            if (value == array[i]) {
+                array.remove(i)
+                return true
+            }
+        }
+        return false
+
     }
 
 }
@@ -62,19 +67,21 @@ fun main() {
 
     val internship1 = Internship()
     // 1
-    //    println("1 - annnaz ${internship1.isPalindrome("annnaz")},
-    //    annnzznnna ${internship1.isPalindrome("annnzznnna")}")
+    println(
+        "1 - antennas ${internship1.isPalindrome("antennas")}, " +
+                "level ${internship1.isPalindrome("level")}"
+    )
     // 2
-    //    println("2 - ${internship1.minSplit(21)}")
+    println("2 - ${internship1.minSplit(21)}")
     // 3
-    //    println("\n 3 - ${internship1.notContains(array1)}")
+    println("\n 3 - ${internship1.notContains(array1)}")
     // 4
-    //    println(
-    //        "4 - ())() - ${internship1.isProperly("())()")} " +
-    //                "\n    (()()) - ${internship1.isProperly("(()())")} "
-    //    )
+    println(
+        "4 - ())() - ${internship1.isProperly("())()")} " +
+                "\n    (()()) - ${internship1.isProperly("(()())")} "
+    )
     // 5
-    //    println("5 - ${internship1.countVariants(4)}")
+    println("5 - ${internship1.countVariants(4)}")
     // 6
     println("6 - ${internship1.dataStructure(4)}")
 }
