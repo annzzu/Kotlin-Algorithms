@@ -2,39 +2,39 @@ package com.example.assignment_2.algorithms
 
 class Node(var data: Int) {
     var next: Node? = null
+    var prev: Node? = null
 }
 
 class MyDataStructure {
-    var head: Node? = null
+    private var head: Node? = null
+    private var tail: Node? = null
 
-    //function to add an element to the list at the end if there are element already and at the start if no elements are there
-    fun insert(data: Int) {
-        val newNode = Node(data)
+
+    fun insert(node: Node) {
         if (head == null) {
-            head = newNode
+            head = node
+            tail = node
+            tail!!.next = null
+            head!!.prev = null
         } else {
-            var n = head
-            while (n!!.next != null) {
-                n = n.next
-            }
-            n.next = newNode
+            tail!!.next = node
+            node.prev = tail
+            tail = node
+            tail!!.next = null
         }
     }
 
-    //function to delete an element at the given index
-    fun deleteAt(index: Int) {
-        if (index == 0) {
-            head = head!!.next
-        } else {
-            var currentNode = head
-            for (i in 0 until index - 1) {
-                currentNode = currentNode!!.next
-            }
-            currentNode!!.next = currentNode.next!!.next
+    fun delete(node: Node) {
+        if (head == node) {
+            head = null
+        }
+        if (node.next != null){
+            node.next!!.prev = node.prev
+        }
+        if (node.prev != null){
+            node.prev!!.next = node.next
         }
     }
-
-    //function to show the list
     fun show() {
         var currentNode = head
         if (currentNode == null) {

@@ -4,7 +4,6 @@ package com.example.assignment_2.algorithms
 //fun String.isPalindrome(): Boolean = this == this.reversed()
 
 class Internship {
-    private val internshipArray = mutableListOf(1 , 5 , 2 , 4 , 5 , -4 , 0 , -1 , 6)
 
     fun isPalindrome(text: String): Boolean {
         if (text.isEmpty() || text.length == 1) return true
@@ -59,16 +58,19 @@ class Internship {
 
     fun countVariants(stairCount: Int): Int = fibonacciNumber(stairCount + 1)
 
-    fun dataStructure(value: Int) {
+    fun dataStructure() {
+        println("\n 6 - ")
         val list = MyDataStructure()
-        list.insert(12); //12
-        list.insert(43);
-        list.insert(44)
-        list.insert(10)
-        list.insert(13)
-        list.insert(16) // 44 10 13 16
-        list.deleteAt(value) // 44 10 16
-        println("6 - ")
+        val node1 = Node(10)
+        val node2 = Node(43)
+        val node3 = Node(15)
+        val node4 = Node(1000)
+        list.insert(node1)
+        list.insert(node2)
+        list.insert(node3)
+        list.insert(node4)
+        list.show()
+        list.delete(node2)
         list.show()
     }
 
@@ -95,6 +97,6 @@ fun main() {
     // 5
     println("5 - ${internship1.countVariants(4)}")
     // 6
-    internship1.dataStructure(2)
+    internship1.dataStructure()
 
 }
