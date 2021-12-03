@@ -2,14 +2,10 @@ package com.example.assignment_2.algorithms
 
 
 class Internship {
-    //1.     დაწერეთ ფუნქცია, რომელსაც გადაეცემა ტექსტი  და აბრუნებს პალინდრომია თუ არა.
-    // (პალინდრომი არის ტექსტი რომელიც ერთნაირად იკითხება ორივე მხრიდან).
-    // Boolean isPalindrome(String text);
+
     fun isPalindrome(text: String): Boolean = text == text.reversed()
 
-    //2.     გვაქვს 1,5,10,20 და 50 თეთრიანი მონეტები. დაწერეთ ფუნქცია, რომელსაც გადაეცემა თანხა
-    // (თეთრებში) და აბრუნებს მონეტების მინიმალურ რაოდენობას, რომლითაც შეგვიძლია ეს თანხა დავახურდაოთ.
-    //Int minSplit(Int amount);
+
     fun minSplit(amount: Int): Int {
         var amountA = amount
         val coins = listOf(1 , 5 , 10 , 20 , 50)
@@ -23,9 +19,7 @@ class Internship {
         return ans.size
     }
 
-    //3. მოცემულია მასივი, რომელიც შედგება მთელი რიცხვებისგან. დაწერეთ ფუნქცია რომელსაც გადაეცემა ეს
-    // მასივი და აბრუნებს მინიმალურ მთელ რიცხვს, რომელიც 0-ზე მეტია და ამ მასივში არ შედის.
-    //Int notContains(Int[] array);
+
     fun notContains(array: MutableList<Int>): Int {
         if (array.isEmpty()) return 1
         var i = 0
@@ -37,19 +31,14 @@ class Internship {
                 array[temp] = temp2
             } else i += 1
         }
-        for (i in 0..array.size)
-            if (array[i] != i + 1)
-                return i + 1
+        array.forEachIndexed { index , value ->
+            if (value != index + 1)
+                return index + 1
+        }
         return i + 1
-
 
     }
 
-
-    //4.     მოცემულია String რომელიც შედგება „(„ და „)“ ელემენტებისგან. დაწერეთ ფუნქცია
-    // რომელიც აბრუნებს ფრჩხილები არის თუ არა მათემატიკურად სწორად დასმული.
-    //Boolean isProperly(String sequence);
-    //მაგ: (()()) სწორი მიმდევრობაა,  ())() არასწორია
     fun isProperly(sequence: String): Boolean {
         val stack = mutableListOf<Char>()
         sequence.forEach { char ->
@@ -63,9 +52,6 @@ class Internship {
         return true
     }
 
-    //5.     გვაქვს n სართულიანი კიბე, ერთ მოქმედებაში შეგვიძლია ავიდეთ 1 ან 2 საფეხურით.
-    // დაწერეთ ფუნქცია რომელიც დაითვლის n სართულზე ასვლის ვარიანტების რაოდენობას.
-    //Int countVariants(Int stearsCount);
     private fun fibonacciNumber(n: Int): Int = when {
         n <= 1 -> n
         else -> fibonacciNumber(n - 1) + fibonacciNumber(n - 2)
@@ -74,8 +60,6 @@ class Internship {
     fun countVariants(stearsCount: Int): Int =
         fibonacciNumber(stearsCount + 1)
 
-    //6.     დაწერეთ საკუთარი მონაცემთა სტრუქტურა,
-    // რომელიც საშუალებას მოგვცემს O(1) დროში წავშალოთ ელემენტი.
     fun dataStructure(value: Int) {
 //        if (!contains(value)) {
 //            throw NoSuchElementException()
