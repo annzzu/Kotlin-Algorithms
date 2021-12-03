@@ -5,7 +5,6 @@ class Internship {
 
     fun isPalindrome(text: String): Boolean = text == text.reversed()
 
-
     fun minSplit(amount: Int): Int {
         var amountA = amount
         val coins = listOf(1 , 5 , 10 , 20 , 50)
@@ -46,8 +45,7 @@ class Internship {
         else -> fibonacciNumber(n - 1) + fibonacciNumber(n - 2)
     }
 
-    fun countVariants(stearsCount: Int): Int =
-        fibonacciNumber(stearsCount + 1)
+    fun countVariants(stearsCount: Int): Int = fibonacciNumber(stearsCount + 1)
 
     fun dataStructure(value: Int) {
 //        if (!contains(value)) {
@@ -64,7 +62,8 @@ fun main() {
 
     val internship1 = Internship()
     // 1
-    //    println("1 - anuki ${internship1.isPalindrome("anuki")}, annnzznnna ${internship1.isPalindrome("annnzznnna")}")
+    //    println("1 - annnaz ${internship1.isPalindrome("annnaz")},
+    //    annnzznnna ${internship1.isPalindrome("annnzznnna")}")
     // 2
     //    println("2 - ${internship1.minSplit(21)}")
     // 3
@@ -77,5 +76,5 @@ fun main() {
     // 5
     //    println("5 - ${internship1.countVariants(4)}")
     // 6
-    //    println("6 - ${internship1.dataStructure(4)}")
+    println("6 - ${internship1.dataStructure(4)}")
 }
